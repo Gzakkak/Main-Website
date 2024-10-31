@@ -15,8 +15,8 @@ function SystemsAnalytics() {
           </li>
         </ul>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', margin: '5rem 0' }}>
-          <img src={mis306img1} alt="George Zakkak's system analysis project picture #1" className="project-style2" />
-          <img src={mis306img2} alt="George Zakkak's system analysis project picture #2" className="project-style2" />
+          <img src={mis306img1} alt="George Zakkak's system analysis project  #1" className="project-style2" />
+          <img src={mis306img2} alt="George Zakkak's system analysis project  #2" className="project-style2" />
         </div>
       </div>
       <BackButton /> {BackButton}

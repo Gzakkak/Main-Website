@@ -17,7 +17,7 @@ function ModelUnitedNations() {
             </ul>
           </div>
           <div className="image-content">
-            <img src={munimg} alt="George Zakkak's picture at the Model United Nations conference" className="project-style1" />
+            <img src={munimg} alt="George Zakkak's at the Model United Nations conference" className="project-style1" />
           </div>
         </div>
       </div>

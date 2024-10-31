@@ -16,7 +16,7 @@ function AmazonInternship() {
             </p>
           </div>
           <div className="image-content">
-            <img src={amazonimg} alt="George Zakkak's picture at his Amazon internship" className="project-style1" />
+            <img src={amazonimg} alt="George Zakkak at his Amazon internship" className="project-style1" />
           </div>
         </div>
       </div>
