@@ -1,5 +1,7 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './components/Theme';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
@@ -9,41 +11,40 @@ import Projects from './components/Projects';
 import Goals from './components/Goals';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
-import AmazonInternship from './components/AmazonInternship';
+{/*import AmazonInternship from './components/AmazonInternship';
 import SystemsAnalytics from './components/SystemsAnalytics';
-import ModelUnitedNations from './components/ModelUnitedNations';
-import './App.css';
+import ModelUnitedNations from './components/ModelUnitedNations';*/}
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsOpen(false);
-  };
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
 
   return (
-    <Router>
-      <div className={`app ${isOpen ? 'sidebar-open' : ''}`}>
-        <Header toggleSidebar={toggleSidebar} />
-        <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} /> {/* Updated the path for Projects */}
-          <Route path="/amazon-internship" element={<AmazonInternship />} /> {/* Use element instead of component */}
-          <Route path="/systems-analytics" element={<SystemsAnalytics />} />
-          <Route path="/model-united-nations" element={<ModelUnitedNations />} />
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div className={`app ${isOpen ? 'sidebar-open' : ''}`}>
+          <Header toggleSidebar={toggleSidebar} />
+          <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
+
+          <main>
+            <section id="home"><Home /></section>
+            <section id="about"><About /></section>
+            <section id="projects"><Projects /></section>
+            <section id="goals"><Goals /></section>
+            <section id="resume"><Resume /></section>
+            <section id="contact"><Contact /></section>
+            {/*<section id="amazon-internship"><AmazonInternship /></section>
+            <section id="systems-analytics"><SystemsAnalytics /></section>
+            <section id="model-united-nations"><ModelUnitedNations /></section>*/}
+          </main>
+
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
