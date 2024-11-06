@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import emailjs from 'emailjs-com';
-{/*import linkedinLogo from '../images/linkedin-logo.png';
-import instagramLogo from '../images/instagram-logo.png';
-import emailLogo from '../images/email-logo.png';*/}
+
 
 
 // Custom styles for consistent theming
@@ -52,19 +50,6 @@ const ErrorMessage = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
 }));
 
-{/*const SocialLink = styled('a')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  textDecoration: 'none',
-  color: theme.palette.text.primary,
-  fontSize: '1rem',
-  marginTop: theme.spacing(2),
-  '& img': {
-    width: 24,
-    height: 24,
-    marginRight: theme.spacing(1),
-  },
-}));*/}
 
 function Contact() {
   const [formData, setFormData] = useState({

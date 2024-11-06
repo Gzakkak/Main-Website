@@ -11,9 +11,7 @@ import Projects from './components/Projects';
 import Goals from './components/Goals';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
-{/*import AmazonInternship from './components/AmazonInternship';
-import SystemsAnalytics from './components/SystemsAnalytics';
-import ModelUnitedNations from './components/ModelUnitedNations';*/}
+
 
 
 function App() {
@@ -36,9 +34,7 @@ function App() {
             <section id="goals"><Goals /></section>
             <section id="resume"><Resume /></section>
             <section id="contact"><Contact /></section>
-            {/*<section id="amazon-internship"><AmazonInternship /></section>
-            <section id="systems-analytics"><SystemsAnalytics /></section>
-            <section id="model-united-nations"><ModelUnitedNations /></section>*/}
+
           </main>
 
           <Footer />
