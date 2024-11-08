@@ -14,7 +14,7 @@ function Sidebar({ isOpen, closeSidebar }) {
       onClose={closeSidebar}
       sx={{
         '.MuiDrawer-paper': {
-          backgroundColor: '#65a7e9',
+          backgroundColor: '#212121',
           width: 250,
           padding: '16px',
           border: 'none',
@@ -28,7 +28,7 @@ function Sidebar({ isOpen, closeSidebar }) {
         gutterBottom
         sx={{
           fontWeight: 'bold',
-          color: '#ffffff',
+          color: '#65a7e9',
           letterSpacing: '1px',
         }}
       >
@@ -54,13 +54,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Home sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Home sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="Home"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
@@ -83,13 +83,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Person sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Person sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="About Me"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
@@ -112,13 +112,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Work sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Work sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="Projects"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
@@ -141,13 +141,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Flag sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Flag sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="Goals"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
@@ -170,13 +170,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Description sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Description sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="Resume"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
@@ -199,13 +199,13 @@ function Sidebar({ isOpen, closeSidebar }) {
             padding: '12px',
           }}
         >
-          <Mail sx={{ marginRight: '12px', color: '#ffffff' }} />
+          <Mail sx={{ marginRight: '12px', color: '#65a7e9' }} />
           <ListItemText
             primary="Contact"
             sx={{
-              color: '#ffffff',
+              color: '#65a7e9',
               '&:hover': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
             }}
           />
