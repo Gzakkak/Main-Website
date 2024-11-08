@@ -3,36 +3,38 @@ import { Container, Button, Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-
 const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '0',
-  width: '100vw',
-  height: '105vh',
+  padding: '4rem 0',
+  height: '100%',
+  width: '100%',
   background: `linear-gradient(
-    #65a7e9 0%,
-    #65a7e9 20%,
-    #65a7e9 35%, 
+    #4a6a9e 0%,
+    #5589c3 25%,
     #65a7e9 50%,
-    #4a6a9e 70%, 
-    #333333 85%, 
-    #212121 100%
+    #5589c3 75%,
+    #333333 100%
   )`,
   color: '#212121',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
-    padding: '2rem 5%',
+    padding: '3rem 0',
+    width: '100%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '2rem 0',
+    width: '100%',
   },
 }));
+
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 700,
   marginBottom: theme.spacing(8),
-  marginTop: '-150px',
   color: '#212121',
   textAlign: 'center',
 }));
@@ -41,28 +43,13 @@ const Paragraph = styled(Typography)(({ theme }) => ({
   fontSize: '1.1rem',
   lineHeight: 1.7,
   color: '#ffffff',
-  marginBottom: theme.spacing(4),
-  display: 'none',
-  textAlign: 'left',
-  width: '100%',
-  [theme.breakpoints.up('md')]: {
-    width: '100%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
+  marginBottom: theme.spacing(1),
+  textAlign: 'center',
+  padding: 'auto',
+  maxWidth: '100%', // Now taking up the full width of the paragraph container
   [theme.breakpoints.down('md')]: {
+    padding: 'auto',
     width: '100%',
-    padding: '0 5%',
-  },
-}));
-
-const GoalContainer = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  cursor: 'pointer',
-  '&:hover': {
-    '& > div': {
-      display: 'block',
-    },
   },
 }));
 
@@ -76,7 +63,7 @@ const goalsData = [
     paragraph: 'Personally, I value continuous growth and development, both in my career and in my personal life. A core part of my long-term goals is to balance professional success with personal fulfillment. My family has always been a source of support and motivation. They’ve encouraged me to push beyond my limits and taught me the importance of resilience and empathy, traits that I carry into my leadership and collaborative efforts. I aim to be the kind of leader who creates environments where teams can thrive, much like the strong foundation my family provided for me.',
   },
   {
-    title: 'Stepping into Leadership',
+    title: 'Stepping into Leadership and Shaping the Future of Innovation',
     paragraph: 'As I look forward to joining a leadership role with Amazon, Inc. in San Diego by 2025, I see this milestone as a major step in achieving not only career success but also the personal fulfillment of managing large teams and overseeing operations at scale. My family will be by my side during this next chapter, as they’ve been for every major milestone, whether it was my academic achievements, completing internships, or stepping into leadership roles in my community.',
   },
   {
@@ -84,7 +71,7 @@ const goalsData = [
     paragraph: 'In the long run, I also have personal goals tied to health, wellness, and personal development. I aim to cultivate hobbies and interests that keep me grounded, like staying active through calisthenics, cooking, and exploring new cultures through travel. These experiences help me bring balance into my life and add perspective, which I believe is essential for long-term success both professionally and personally.',
   },
   {
-    title: 'Holistic Growth: Striving for Excellence in Career and Life',
+    title: 'Striving for Excellence in Career and Life',
     paragraph: 'Ultimately, my journey is not just about professional accomplishments; it’s about reaching milestones that blend career achievements with personal growth, all while staying connected to my values and the support system that has helped shape who I am today.',
   },
 ];
@@ -98,39 +85,61 @@ function Goals() {
 
   return (
     <Section id="goals">
-      <Container maxWidth={false}>
+      <Container maxWidth="lg">
         <Title variant="h2">Goals</Title>
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12}>
-            {goalsData.map((goal, index) => (
-              <GoalContainer key={index} onClick={() => toggleParagraph(index)}>
-
+        <Grid container spacing={2} justifyContent="center">
+          {goalsData.map((goal, index) => (
+            <Grid item xs={12} key={index} display="flex" justifyContent="center">
+              <Box
+                sx={{
+                  width: {
+                    xs: '100%', // Full width for small screens
+                    md: '85%',  // Adjusted width for larger screens
+                  },
+                  textAlign: {
+                    xs: 'center', // Center the text on small screens
+                    md: 'left',   // Align the text to the left on medium and larger screens
+                  },
+                }}
+              >
                 <Button
                   variant="contained"
                   color="primary"
+                  fullWidth
+                  onClick={() => toggleParagraph(index)}
                   sx={{
-                    width: '100%',
+                    display: 'flex',
                     padding: '12px',
                     marginBottom: '10px',
-                    textAlign: 'left',
-                    justifyContent: 'flex-start',
                     backgroundColor: '#212121',
                     color: '#65a7e9',
                     '&:hover': {
                       backgroundColor: '#4a6a9e',
                     },
+                    justifyContent: {
+                      xs: 'center', // Center the content on small screens
+                      md: 'flex-start', // Align the content to the left on larger screens
+                    },
                   }}
                 >
                   {goal.title}
-
-                  <ArrowDownwardIcon sx={{ marginLeft: 'auto' }} />
+                  <ArrowDownwardIcon sx={{ marginLeft: 'auto' }} /> {/* Ensures arrow is always right-aligned */}
                 </Button>
                 {expandedIndex === index && (
-                  <Paragraph style={{ display: 'block' }}>{goal.paragraph}</Paragraph>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    width="100%"
+                    textAlign="center"
+                    margin="2rem auto"
+                  >
+                    <Paragraph>{goal.paragraph}</Paragraph>
+                  </Box>
                 )}
-              </GoalContainer>
-            ))}
-          </Grid>
+              </Box>
+            </Grid>
+
+          ))}
         </Grid>
       </Container>
     </Section>

@@ -5,36 +5,32 @@ import { Link as ScrollLink } from 'react-scroll';
 function Header({ toggleSidebar }) {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [disappearanceDelay, setDisappearanceDelay] = useState(null); // For delayed disappearance
+  const [disappearanceDelay, setDisappearanceDelay] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only show header if user is at the top
       if (window.scrollY === 0) {
-        setShowHeader(true); // Show header at the top
+        setShowHeader(true);
       } else if (window.scrollY > lastScrollY) {
-        setShowHeader(false); // Hide on scroll down
+        setShowHeader(false);
       } else {
-        setShowHeader(true); // Show on scroll up
+        setShowHeader(true);
       }
-
-      setLastScrollY(window.scrollY); // Update last scroll position
+      setLastScrollY(window.scrollY);
     };
 
     const handleMouseMove = (e) => {
       if (e.clientY < 50) {
-        clearTimeout(disappearanceDelay); // Clear any delayed hiding
-        setShowHeader(true); // Show header when mouse moves near top
+        clearTimeout(disappearanceDelay);
+        setShowHeader(true);
       }
     };
 
     const handleMouseLeave = () => {
-      // Set a delay before hiding the header
-      const timeoutId = setTimeout(() => setShowHeader(false), 500); // 500ms delay
-      setDisappearanceDelay(timeoutId); // Save timeout ID to clear if needed
+      const timeoutId = setTimeout(() => setShowHeader(false), 500);
+      setDisappearanceDelay(timeoutId);
     };
 
-    // Enable the scroll listener only when user is not at the top
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousemove', handleMouseMove);
     document.querySelector('header').addEventListener('mouseleave', handleMouseLeave);
@@ -43,32 +39,43 @@ function Header({ toggleSidebar }) {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousemove', handleMouseMove);
       document.querySelector('header').removeEventListener('mouseleave', handleMouseLeave);
-      clearTimeout(disappearanceDelay); // Clear timeout on cleanup
+      clearTimeout(disappearanceDelay);
     };
-  }, [lastScrollY, disappearanceDelay]);  // Dependency on scroll position
+  }, [lastScrollY, disappearanceDelay]);
 
   return (
     <AppBar
       position="fixed"
       style={{
-        transition: 'top 0.3s',
-        top: showHeader ? '0' : '-80px',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',  // Transparent background
+        transition: 'top 1.2s',
+        top: showHeader ? '0' : '-100px',
+        background: 'linear-gradient(45deg, #212121, #65a7e9, #4a6a9e, #333333)',
       }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'row', sm: 'row' },
+          justifyContent: { xs: 'center', sm: 'space-between' },
+          alignItems: 'center',
+          textAlign: 'center',
+          paddingLeft: { xs: '8px 16px', sm: '16px 24px' },
+          gap: { xs: 1, sm: 0 },
+        }}
+      >
+        {/* Get to Know Me Button */}
         <Button
           variant="outlined"
           color="inherit"
           onClick={toggleSidebar}
           sx={{
-            marginRight: 'auto',
             borderRadius: '20px',
             padding: '8px 16px',
             fontWeight: 'bold',
+            textAlign: 'center',
             transition: 'background-color 0.3s, color 0.3s',
             '&:hover': {
-              backgroundColor: '#0999f9',
+              backgroundColor: '#65a7e9',
               color: '#ffffff',
             },
           }}
@@ -76,37 +83,42 @@ function Header({ toggleSidebar }) {
           Get to know me!
         </Button>
 
+        {/* Name - George Zakkak */}
         <Typography
           variant="h6"
-          button component={ScrollLink} to="home" smooth={true}
+          component={ScrollLink}
+          to="home"
+          smooth={true}
           sx={{
-            flexGrow: 1,
-            textAlign: 'center',
             textDecoration: 'none',
             color: 'inherit',
             cursor: 'pointer',
             fontWeight: 'bold',
-            fontSize: '2.2rem',
+            fontSize: { xs: '1.2rem', sm: '2.2rem' }, // Smaller font size for mobile
+            marginY: { xs: 1, sm: 0 },
             '&:hover': {
-              color: '#0999f9',
-              textShadow: '0 0 5px #0999f9',
+              color: '#212121',
             },
           }}
         >
           George Zakkak
         </Typography>
 
+        {/* Connect with Me Button */}
         <Button
           variant="outlined"
           color="inherit"
-          button component={ScrollLink} to="contact" smooth={true} cursor='default'
+          component={ScrollLink}
+          to="contact"
+          smooth={true}
           sx={{
             borderRadius: '20px',
             padding: '8px 16px',
             fontWeight: 'bold',
+            textAlign: 'center',
             transition: 'background-color 0.3s, color 0.3s',
             '&:hover': {
-              backgroundColor: '#0999f9',
+              backgroundColor: '#65a7e9',
               color: '#ffffff',
             },
           }}

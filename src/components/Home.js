@@ -9,40 +9,47 @@ const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '90vh',
-  padding: '6rem 0',
-  marginTop: '-80px',
+  padding: '4rem 0',
+  height: '100%',
+  width: '100%',
   background: `linear-gradient(
-  #212121 0%, 
-  #212121 50%,
-   #333333 70%, 
-   #4a6a9e 85%, 
-   #65a7e9 100%)`,
+    #212121 0%,        
+    #212121 25%,        
+    #333333 50%,         
+    #333333 75%,         
+    #4a6a9e 100%  
+    )`,
+
   color: '#ffffff',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
-    height: 'auto',
+    padding: '8rem auto',
   },
 }));
 
 const ProfileImage = styled(Avatar)(({ theme }) => ({
   width: 350,
   height: 400,
-
   margin: '2rem auto',
   boxShadow: '0 4px 20px #65a7e9',
-
   [theme.breakpoints.down('sm')]: {
     width: 250,
     height: 300,
+
   },
 }));
 
-const TextContainer = styled(Box)({
-  paddingRight: '2rem',
+const TextContainer = styled(Box)(({ theme }) => ({
+  paddingRight: '0',
+
   maxWidth: 600,
-});
+  textAlign: 'justify',
+  [theme.breakpoints.down('md')]: {
+    marginBottom: '2rem',
+    marginTop: '40px',
+  },
+}));
 
 function Home() {
   return (
@@ -52,16 +59,38 @@ function Home() {
           <Grid container spacing={4} alignItems="center" justifyContent="center">
             <Grid item xs={12} md={7}>
               <TextContainer>
-                <Typography variant="h2" component="h1" gutterBottom style={{ fontWeight: 'bold', color: '#65a7e9' }}>
+                <Typography
+
+                  gutterBottom
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#65a7e9',
+                    fontSize: {
+                      xs: '1.3rem',
+                      sm: '2.3rem',
+                    },
+                    textAlign: 'center',
+                  }}
+                >
                   <ReactTypingEffect
-                    text={['Welcome to My Website!', 'Get to Know Me!']}
-                    speed={20}
-                    eraseSpeed={20}
-                    eraseDelay={750}
+                    text={['Welcome to My Digital Space!', 'Building Tomorrow’s Tech Today!']}
+                    speed={30}
+                    eraseSpeed={30}
+                    eraseDelay={2000}
                     typingDelay={50}
                   />
                 </Typography>
-                <Typography variant="body1" color="#65a7e9" paragraph style={{ fontSize: '1.2rem', lineHeight: 1.6 }}>
+                <Typography
+                  variant="body1"
+                  color="#65a7e9"
+                  paragraph
+                  style={{
+                    fontSize: '1.1rem',
+                    lineHeight: 1.6,
+                    marginTop: '1rem',
+                    textAlign: 'center',
+                  }}
+                >
                   My name is George Zakkak, an aspiring technology leader dedicated to advancing my expertise in
                   management information systems and leadership development. This website serves as a window into my
                   professional journey, showcasing my experiences, projects, and future aspirations. Join me as I strive

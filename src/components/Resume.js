@@ -1,16 +1,18 @@
 import React from 'react';
 import { Box, Typography, Container, Button } from '@mui/material';
 import { styled } from '@mui/system';
+import resumeImage from '../images/Resume.png';
 
+// Styles for the main section
 const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '0',
-  width: '100vw',
-  height: '120vh',
+  padding: '4rem 0', // Adjusted padding for better responsiveness
+  minHeight: '100%',
+  width: '100%',
   background: `linear-gradient(
-    #212121 0%, 
+    #333333 0%, 
     #212121 50%,
     #333333 70%, 
     #4a6a9e 85%, 
@@ -20,23 +22,65 @@ const Section = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
-    padding: '2rem 5%',
+    padding: '3rem 0',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '2rem 0',
   },
 }));
 
+// Styles for the title
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 700,
-  marginTop: '90px',
   marginBottom: theme.spacing(4),
   color: '#65a7e9',
   textAlign: 'center',
 }));
 
+const ResumeImage = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  width: '100%',
+  maxWidth: '800px',
+  border: '5px solid #212121',
+  overflow: 'hidden',
+  margin: '0 auto', // Center the image horizontally
+  borderRadius: '10px',
+  cursor: 'pointer',
+  boxShadow: '0 0 15px #65a7e9',
+  transition: 'transform 0.3s ease',
+  padding: 'auto', // Add padding for spacing inside the box
+  boxSizing: 'border-box', // Ensure padding does not affect the width
+  '& img': {
+    width: '100%',
+    borderRadius: '10px',
+  },
+  [theme.breakpoints.down('md')]: {
+    maxWidth: '90%', // Adjust the width for medium devices
+    padding: 'auto', // Adjust padding for medium devices
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '100%', // Use full width on small devices
+    margin: '0 auto', // Ensure it's centered
+    padding: 'auto', // Adjust padding for small devices
+  },
+}));
+
+
+
+
+
 const Resume = () => {
-  // Function to handle print
-  const handlePrint = () => {
-    window.print(); // This will open the print dialog
+  const handleButtonClick = () => {
+    window.open('/George Zakkak_24Q3_Resume BS.pdf', '_blank');
+  };
+
+  const handleEmail = () => {
+    window.location.href = 'mailto:gyzakkak@gmail.com';
+  };
+
+  const handleLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/george-zakkak-01856a219/', '_blank');
   };
 
   return (
@@ -44,15 +88,10 @@ const Resume = () => {
       <Container maxWidth="lg">
         <Title variant="h2">Resume</Title>
 
-
         <Box display="flex" justifyContent="center" marginBottom={4} gap={2}>
-          {/* Download Button */}
           <Button
             variant="contained"
-            color="primary"
-            href="/George Zakkak_24Q3_Resume BS.pdf" // Adjusted file path
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={handleButtonClick}
             sx={{
               fontSize: '1.2rem',
               padding: '10px 30px',
@@ -62,14 +101,12 @@ const Resume = () => {
               },
             }}
           >
-            Download
+            Print or Download
           </Button>
 
-          {/* Print Button */}
           <Button
             variant="contained"
-            color="secondary"
-            onClick={handlePrint} // Trigger the print dialog
+            onClick={handleEmail}
             sx={{
               fontSize: '1.2rem',
               padding: '10px 30px',
@@ -79,22 +116,28 @@ const Resume = () => {
               },
             }}
           >
-            Print
+            Email
+          </Button>
+
+          <Button
+            variant="contained"
+            onClick={handleLinkedIn}
+            sx={{
+              fontSize: '1.2rem',
+              padding: '10px 30px',
+              backgroundColor: '#212121',
+              '&:hover': {
+                backgroundColor: '#65a7e9',
+              },
+            }}
+          >
+            LinkedIn
           </Button>
         </Box>
 
-        <Box display="flex" justifyContent="center" marginBottom={4}>
-          <iframe
-            src="/George Zakkak_24Q3_Resume BS.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            title="Resume PDF"
-          />
-        </Box>
-
-
-
+        <ResumeImage>
+          <img src={resumeImage} alt="Resume" />
+        </ResumeImage>
       </Container>
     </Section>
   );

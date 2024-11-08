@@ -3,30 +3,31 @@ import { Container, Typography, TextField, Button, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import emailjs from 'emailjs-com';
 
-
-
 // Custom styles for consistent theming
 const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '0',
-  width: '100vw',
-  height: '105vh',
+  padding: '4rem 0', // Adjusted padding for better responsiveness
+  minHeight: '100%',
+  width: '100%',
   background: `linear-gradient(
     #65a7e9 0%,
     #65a7e9 20%,
     #65a7e9 35%, 
     #65a7e9 50%,
     #4a6a9e 70%, 
-    #333333 85%, 
+    #4a6a9e 85%, 
     #212121 100%
   )`,
   color: '#212121',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
-    padding: '2rem 5%',
+    padding: '3rem 0',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '2rem 0',
   },
 }));
 
@@ -35,7 +36,10 @@ const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: '#212121',
   textAlign: 'center',
-  marginBottom: theme.spacing(4),
+  marginBottom: theme.spacing(4), // Added margin for spacing
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem', // Adjust font size for smaller screens
+  },
 }));
 
 const SuccessMessage = styled(Typography)(({ theme }) => ({
@@ -49,7 +53,6 @@ const ErrorMessage = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(2),
   textAlign: 'center',
 }));
-
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -70,12 +73,12 @@ function Contact() {
 
     emailjs
       .send('service_m72sujj', 'template_7kgrrh2', formData, 'zXyUC5yeRa-G_K3JC')
-      .then((response) => {
+      .then(() => {
         setSuccessMessage('Thanks for reaching out, talk soon!');
         setErrorMessage('');
         setFormData({ name: '', email: '', message: '' });
       })
-      .catch((error) => {
+      .catch(() => {
         setErrorMessage('There was an error sending your message. Please try again.');
         setSuccessMessage('');
       });
@@ -99,21 +102,21 @@ function Contact() {
             required
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
-                  borderColor: '#212121',
-
+                  borderColor: '#FFFFFF',
                 },
                 '&:hover fieldset': {
                   borderColor: '#000000',
-                  boxShadow: '0 0 20px #FFFFFF'
+                  boxShadow: '0 0 15px #FFFFFF',
                 },
                 '&.Mui-focused fieldset': {
                   borderColor: '#FFFFFF',
                 },
               },
+              mb: 2, // Margin bottom for spacing
             }}
           />
           <TextField
@@ -127,21 +130,21 @@ function Contact() {
             required
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
-                  borderColor: '#212121',
-
+                  borderColor: '#FFFFFF',
                 },
                 '&:hover fieldset': {
                   borderColor: '#000000',
-                  boxShadow: '0 0 20px #FFFFFF'
+                  boxShadow: '0 0 15px #FFFFFF',
                 },
                 '&.Mui-focused fieldset': {
                   borderColor: '#FFFFFF',
                 },
               },
+              mb: 2, // Margin bottom for spacing
             }}
           />
           <TextField
@@ -157,16 +160,16 @@ function Contact() {
             rows={4}
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#212121',
+                color: '#FFFFFF',
               },
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
-                  borderColor: '#212121',
-
+                  borderColor: '#FFFFFF',
                 },
                 '&:hover fieldset': {
                   borderColor: '#000000',
-                  boxShadow: '0 0 20px #FFFFFF'
+                  boxShadow: '0 0 15px #FFFFFF',
+
                 },
                 '&.Mui-focused fieldset': {
                   borderColor: '#FFFFFF',
@@ -177,7 +180,6 @@ function Contact() {
           <Button
             type="submit"
             variant="contained"
-            color="#65a7e9"
             fullWidth
             sx={{
               mt: 3,
@@ -185,7 +187,8 @@ function Contact() {
               color: '#65a7e9',
               '&:hover': {
                 backgroundColor: '#333333',
-                boxShadow: '0 0 20px #00FF00',
+                color: '#00FF00',
+                boxShadow: '0 0 15px #00FF00',
               },
             }}
           >
@@ -196,19 +199,6 @@ function Contact() {
         {/* Success/Error Messages */}
         {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-
-        {/*
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
-          <SocialLink href="https://www.linkedin.com/in/george-zakkak-01856a219/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinLogo} alt="LinkedIn Logo" /> @george zakkak
-          </SocialLink>
-          <SocialLink href="https://www.instagram.com/georgezakkakk/?hl=en" target="_blank" rel="noopener noreferrer">
-            <img src={instagramLogo} alt="Instagram Logo" /> @george.zakkakk
-          </SocialLink>
-          <SocialLink href="mailto:gyzakkak@gmail.com">
-            <img src={emailLogo} alt="Email Logo" /> gyzakkak@gmail.com
-          </SocialLink>
-        </Box>*/}
       </Container>
     </Section>
   );

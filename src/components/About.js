@@ -7,59 +7,82 @@ const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '0',
-  width: '100vw', // Full page width
-  height: '120vh',
+  height: '100%',
+  width: '100%',
+  padding: '4rem 0',
   background: `linear-gradient(
     to bottom,
-    #65a7e9 0%,          
-    #65a7e9 30%,         
+    #4a6a9e 0%,        
+    #5589c3 25%,        
     #65a7e9 50%,         
-    #4a6a9e 75%, 
-    #333333 90%,
-    #333333 100%        
+    #5589c3 75%,         
+    #333333 100%         
   )`,
   color: '#212121',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
-    padding: '2rem 5%',
+    padding: '3rem 0',
+    width: '100%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '2rem 0',
+    width: '100%',
   },
 }));
 
+// Responsive Title styling
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 700,
-  marginTop: '-100px',
   marginBottom: theme.spacing(8),
   color: '#212121',
-  textAlign: 'center', // Center the title
+  textAlign: 'center',
+  [theme.breakpoints.down('md')]: {
+    fontSize: '2.5rem',
+    marginTop: theme.spacing(-4),
+    marginBottom: theme.spacing(4),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2.5rem',
+    marginTop: theme.spacing(-3),
+    marginBottom: theme.spacing(3),
+  },
 }));
 
+// Responsive Paragraph styling
 const Paragraph = styled(Typography)(({ theme }) => ({
-  fontSize: '1.1rem',
+  fontSize: '1rem',
   lineHeight: 1.7,
   color: '#212121',
-  marginBottom: theme.spacing(4),
-  textAlign: 'left', // Align text to the left
-  width: '100%', // Allow paragraph to take up full width
+  marginBottom: theme.spacing(3),
+  textAlign: 'center',
+  width: '100%',
+  padding: '3rem auto',
   [theme.breakpoints.up('md')]: {
-    width: '100%', // Limit the width to 80% on larger screens
+    width: '100%',
     marginLeft: 'auto',
-    marginRight: 'auto', // Center the text block on larger screens
+    marginRight: 'auto',
+    padding: '3rem auto',
   },
   [theme.breakpoints.down('md')]: {
-    width: '100%', // Full width on smaller screens
-    padding: '0 5%', // Add some padding for smaller screens
+    width: '100%',
+    fontSize: '0.95rem',
+    padding: '3rem auto',
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem',
+    padding: '3rem auto',
+
   },
 }));
 
 function About() {
   return (
     <Section id="about">
-      <Container maxWidth={false}> {/* Set maxWidth to false to remove container limits */}
+      <Container maxWidth={false}> {/* Allows full width without container constraints */}
         <Title variant="h2">About Me</Title>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center" direction="column" alignItems="center">
           <Grid item xs={12}>
             <Paragraph>
               Hi, I’m <strong>George Zakkak</strong>, a dedicated student nearing the completion of my Bachelor’s degree

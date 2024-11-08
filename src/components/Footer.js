@@ -8,11 +8,11 @@ import EmailIcon from '@mui/icons-material/Email';
 const FooterContainer = styled(Box)({
   backgroundColor: '#212121',
   color: '#ffffff',
-  padding: '10px 0 5px',
+  padding: '1rem 20%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  borderTop: '1px solid #4a6a9e',
+  borderTop: '2px solid #4a6a9e',
 });
 
 const FooterIcons = styled(Box)({
@@ -33,7 +33,7 @@ const Footer = () => {
             Pursuing excellence in technology and leadership to drive impactful change.
           </Typography>
 
-          <Divider sx={{ backgroundColor: '#4a6a9e', margin: '20px 0' }} />
+          <Divider sx={{ backgroundColor: '#4a6a9e', margin: '10px 0' }} />
 
           {/* Footer Icons */}
           <FooterIcons>

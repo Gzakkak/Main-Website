@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/Theme';
 import Header from './components/Header';
@@ -11,6 +11,7 @@ import Projects from './components/Projects';
 import Goals from './components/Goals';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
+import AmazonInternship from './components/AmazonInternship';
 
 
 
@@ -34,8 +35,11 @@ function App() {
             <section id="goals"><Goals /></section>
             <section id="resume"><Resume /></section>
             <section id="contact"><Contact /></section>
-
           </main>
+
+          <Routes>
+            <Route path="/amazon-internship" element={<AmazonInternship />} />
+          </Routes>
 
           <Footer />
         </div>
