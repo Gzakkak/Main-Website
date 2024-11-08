@@ -14,7 +14,7 @@ function Sidebar({ isOpen, closeSidebar }) {
       onClose={closeSidebar}
       sx={{
         '.MuiDrawer-paper': {
-          backgroundColor: '#212121',
+          background: 'linear-gradient(180deg, #212121,#333333,#333333,#333333,#4a6a9e, #65a7e9)',
           width: 250,
           padding: '16px',
           border: 'none',
