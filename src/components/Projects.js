@@ -23,14 +23,14 @@ function Projects() {
     },
     {
       id: 'systems-analytics',
-      title: 'Systems Analytics Project',
+      title: 'Systems Analytics ',
       logo: moelogo,
       description: '',
       link: '/SystemAnalytics',
     },
     {
       id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
+      title: 'Model United Nations',
       logo: munlogo,
       description: '',
       link: '/ModelUnitedNations',
@@ -58,7 +58,7 @@ function Projects() {
     },
     {
       id: 'ecommerce',
-      title: 'ecommerce',
+      title: 'E-commerce',
       logo: ecommercelogo,
       description: '',
       link: '/ModelUnitedNations',
@@ -129,12 +129,13 @@ function Projects() {
                   height: '100%',
                   transformStyle: 'preserve-3d',
                   transition: 'transform 0.8s ease-out',
-                  transform: flippedCardId === project.id ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  transform: flippedCardId === project.id ? 'rotateX(180deg)' : 'rotateY(0deg)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   transformOrigin: 'center',
                   padding: 'auto',
+                  margin: 'auto',
                 }}
                 onClick={() => handleCardClick(project.id)}
               >
@@ -156,7 +157,8 @@ function Projects() {
                     margin: 'auto',
                     bgcolor: '#212121',
                     color: 'white',
-                    padding: { xs: 'auto', sm: 'auto' },
+                    padding: 'auto',
+
                   }}
                 >
                   <Box
@@ -164,13 +166,21 @@ function Projects() {
                     src={project.logo}
                     alt={project.title}
                     sx={{
-                      width: '80%',
+                      width: '70%',
                       height: 'auto',
                       mb: 2,
                       borderRadius: 1,
+                      margin: 'auto',
+
                     }}
                   />
-                  <Typography variant="h6" color="inherit">
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: { xs: '.95rem', sm: '1.5rem' }, // Adjust the font sizes as needed
+                      color: 'inherit',
+                    }}
+                  >
                     {project.title}
                   </Typography>
                 </Paper>
@@ -187,13 +197,15 @@ function Projects() {
                     justifyContent: 'center',
                     borderRadius: 2,
                     p: 2,
+
                     boxShadow: '0 0 20px #65a7e9',
                     left: 0,
                     right: 0,
                     margin: 'auto',
                     bgcolor: '#65a7e9',
                     color: 'white',
-                    transform: 'rotateY(180deg)',
+                    transform: 'rotateX(180deg)',
+                    padding: 'auto',
 
                   }}
                 >
