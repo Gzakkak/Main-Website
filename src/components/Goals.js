@@ -46,7 +46,7 @@ const Paragraph = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
   textAlign: 'center',
   padding: 'auto',
-  maxWidth: '100%', // Now taking up the full width of the paragraph container
+  maxWidth: '100%',
   [theme.breakpoints.down('md')]: {
     padding: 'auto',
     width: '100%',
@@ -64,7 +64,8 @@ const goalsData = [
   },
   {
     title: 'Stepping into Leadership and Shaping the Future of Innovation',
-    paragraph: 'As I look forward to joining a leadership role with Amazon, Inc. in San Diego by 2025, I see this milestone as a major step in achieving not only career success but also the personal fulfillment of managing large teams and overseeing operations at scale. My family will be by my side during this next chapter, as they’ve been for every major milestone, whether it was my academic achievements, completing internships, or stepping into leadership roles in my community.',
+    paragraph: 'As I step into an upcoming leadership role in San Diego by 2025, centered around the dynamic world of product management. It will involve driving strategic initiatives, overseeing product development, and ensuring that solutions align seamlessly with both user needs and business objectives. This milestone is about leading cross-functional teams to innovate and deliver impactful products at scale, with a vision for growth and transformative success.',
+
   },
   {
     title: 'Health, Wellness, and Lifelong Balance',
@@ -93,12 +94,12 @@ function Goals() {
               <Box
                 sx={{
                   width: {
-                    xs: '100%', // Full width for small screens
-                    md: '85%',  // Adjusted width for larger screens
+                    xs: '100%',
+                    md: '85%',
                   },
                   textAlign: {
-                    xs: 'center', // Center the text on small screens
-                    md: 'left',   // Align the text to the left on medium and larger screens
+                    xs: 'center',
+                    md: 'left',
                   },
                 }}
               >
@@ -117,13 +118,13 @@ function Goals() {
                       backgroundColor: '#4a6a9e',
                     },
                     justifyContent: {
-                      xs: 'center', // Center the content on small screens
-                      md: 'flex-start', // Align the content to the left on larger screens
+                      xs: 'center',
+                      md: 'flex-start',
                     },
                   }}
                 >
                   {goal.title}
-                  <ArrowDownwardIcon sx={{ marginLeft: 'auto' }} /> {/* Ensures arrow is always right-aligned */}
+                  <ArrowDownwardIcon sx={{ marginLeft: 'auto' }} />
                 </Button>
                 {expandedIndex === index && (
                   <Box

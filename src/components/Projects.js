@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Paper, Typography, Box, Button } from '@mui/material';
 import amazonlogo from '../images/amazonlogo.png';
-import sdsulogo from '../images/sdsulogo.png';
 import munlogo from '../images/munlogo.png';
+import reactlogo from '../images/reactlogo.png';
+import moelogo from '../images/moelogo.png';
+import pythonlogo from '../images/pythonlogo.png';
+import sqllogo from '../images/sqllogo.png';
+import ecommercelogo from '../images/ecommercelogo.png';
+import saplogo from '../images/saplogo.png';
 
 function Projects() {
   const [flippedCardId, setFlippedCardId] = useState(null);
@@ -13,64 +18,56 @@ function Projects() {
       id: 'amazon-internship',
       title: 'Process Flow Optimization',
       logo: amazonlogo,
-      description: `As a Technical Management Intern at Amazon, I led a cross-functional team to execute 
-                    a high-impact project focused on optimizing warehouse management systems...`,
+      description: '',
       link: '/amazoninternship',
     },
     {
       id: 'systems-analytics',
       title: 'Systems Analytics Project',
-      logo: sdsulogo,
-      description: `Worked on a comprehensive systems analytics project for a prominent engineering company 
-                    based in San Diego, where we identified and streamlined inefficiencies in their data workflows...`,
+      logo: moelogo,
+      description: '',
       link: '/SystemAnalytics',
     },
     {
       id: 'model-united-nations',
       title: 'Model United Nations (ABS)',
       logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
+      description: '',
       link: '/ModelUnitedNations',
     },
     {
-      id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
-      logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
+      id: 'react-javascript',
+      title: 'React JS',
+      logo: reactlogo,
+      description: '',
+      link: '/Reactjs',
+    },
+    {
+      id: 'Python',
+      title: 'Python',
+      logo: pythonlogo,
+      description: '',
       link: '/ModelUnitedNations',
     },
     {
-      id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
-      logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
+      id: 'SQL',
+      title: 'SQL',
+      logo: sqllogo,
+      description: '',
       link: '/ModelUnitedNations',
     },
     {
-      id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
-      logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
+      id: 'ecommerce',
+      title: 'ecommerce',
+      logo: ecommercelogo,
+      description: '',
       link: '/ModelUnitedNations',
     },
     {
-      id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
-      logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
-      link: '/ModelUnitedNations',
-    },
-    {
-      id: 'model-united-nations',
-      title: 'Model United Nations (ABS)',
-      logo: munlogo,
-      description: `As a delegate, I actively engaged in multiple high-level sessions centered on leadership 
-                    in political conflict resolution, where I refined my public speaking, negotiation, and diplomatic skills...`,
+      id: 'SAP',
+      title: 'SAP',
+      logo: saplogo,
+      description: '',
       link: '/ModelUnitedNations',
     },
 
@@ -85,7 +82,7 @@ function Projects() {
       component="section"
       id="projects"
       sx={{
-        padding: { xs: 'auto', sm: '4rem 0' },
+        padding: 'auto',
         width: '100%',
         minHeight: '100%',
         textAlign: 'center',
@@ -100,12 +97,12 @@ function Projects() {
     >
       <Typography
         fontWeight={700}
-        fontSize={{ xs: '2rem', sm: '2.5rem' }} // Adjust font size for responsiveness
+        fontSize={{ xs: '2rem', sm: '2.5rem' }}
         gutterBottom
         color="#65a7e9"
         sx={{
-          mb: { xs: 3, sm: 4 }, // Adjust margin-bottom for responsiveness
-          padding: { xs: 'auto', sm: '0 2rem' }, // Optional: Add padding for better alignment on mobile devices
+          mb: { xs: 3, sm: 4 },
+          padding: { xs: 'auto', sm: '0 2rem' },
         }}
       >
         PROJECTS
@@ -122,7 +119,7 @@ function Projects() {
                 height: { xs: 150, sm: 250 },
                 mx: 'auto',
                 mt: 2,
-                padding: { xs: 'auto', sm: '0 2rem' },
+                padding: 'auto',
               }}
             >
               <Box
@@ -137,7 +134,7 @@ function Projects() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   transformOrigin: 'center',
-                  padding: { xs: 'auto', sm: 'auto' },
+                  padding: 'auto',
                 }}
                 onClick={() => handleCardClick(project.id)}
               >
@@ -215,7 +212,7 @@ function Projects() {
                       },
                     }}
                   >
-                    Check Project
+                    Project Coming Soon!
                   </Button>
                 </Paper>
               </Box>

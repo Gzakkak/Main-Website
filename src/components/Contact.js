@@ -3,12 +3,11 @@ import { Container, Typography, TextField, Button, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import emailjs from 'emailjs-com';
 
-// Custom styles for consistent theming
 const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '4rem 0', // Adjusted padding for better responsiveness
+  padding: '4rem 0',
   minHeight: '100%',
   width: '100%',
   background: `linear-gradient(
@@ -36,9 +35,9 @@ const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: '#212121',
   textAlign: 'center',
-  marginBottom: theme.spacing(4), // Added margin for spacing
+  marginBottom: theme.spacing(4),
   [theme.breakpoints.down('sm')]: {
-    fontSize: '2rem', // Adjust font size for smaller screens
+    fontSize: '2rem',
   },
 }));
 
@@ -116,7 +115,7 @@ function Contact() {
                   borderColor: '#FFFFFF',
                 },
               },
-              mb: 2, // Margin bottom for spacing
+              mb: 2,
             }}
           />
           <TextField
@@ -144,7 +143,7 @@ function Contact() {
                   borderColor: '#FFFFFF',
                 },
               },
-              mb: 2, // Margin bottom for spacing
+              mb: 2,
             }}
           />
           <TextField

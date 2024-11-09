@@ -3,12 +3,12 @@ import { Box, Typography, Container, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import resumeImage from '../images/Resume.png';
 
-// Styles for the main section
+
 const Section = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '4rem 0', // Adjusted padding for better responsiveness
+  padding: '4rem 0',
   minHeight: '100%',
   width: '100%',
   background: `linear-gradient(
@@ -29,7 +29,7 @@ const Section = styled(Box)(({ theme }) => ({
   },
 }));
 
-// Styles for the title
+
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 700,
@@ -44,25 +44,25 @@ const ResumeImage = styled(Box)(({ theme }) => ({
   maxWidth: '800px',
   border: '5px solid #212121',
   overflow: 'hidden',
-  margin: '0 auto', // Center the image horizontally
+  margin: '0 auto',
   borderRadius: '10px',
   cursor: 'pointer',
   boxShadow: '0 0 15px #65a7e9',
   transition: 'transform 0.3s ease',
-  padding: 'auto', // Add padding for spacing inside the box
-  boxSizing: 'border-box', // Ensure padding does not affect the width
+  padding: 'auto',
+  boxSizing: 'border-box',
   '& img': {
     width: '100%',
     borderRadius: '10px',
   },
   [theme.breakpoints.down('md')]: {
-    maxWidth: '90%', // Adjust the width for medium devices
-    padding: 'auto', // Adjust padding for medium devices
+    maxWidth: '90%',
+    padding: 'auto',
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '100%', // Use full width on small devices
-    margin: '0 auto', // Ensure it's centered
-    padding: 'auto', // Adjust padding for small devices
+    maxWidth: '100%',
+    margin: '0 auto',
+    padding: 'auto',
   },
 }));
 

@@ -31,7 +31,7 @@ const Section = styled(Box)(({ theme }) => ({
   },
 }));
 
-// Responsive Title styling
+
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 700,
@@ -50,7 +50,7 @@ const Title = styled(Typography)(({ theme }) => ({
   },
 }));
 
-// Responsive Paragraph styling
+
 const Paragraph = styled(Typography)(({ theme }) => ({
   fontSize: '1rem',
   lineHeight: 1.7,
@@ -80,32 +80,19 @@ const Paragraph = styled(Typography)(({ theme }) => ({
 function About() {
   return (
     <Section id="about">
-      <Container maxWidth={false}> {/* Allows full width without container constraints */}
+      <Container maxWidth={false}>
         <Title variant="h2">About Me</Title>
         <Grid container spacing={3} justifyContent="center" direction="column" alignItems="center">
           <Grid item xs={12}>
             <Paragraph>
               Hi, I’m <strong>George Zakkak</strong>, a dedicated student nearing the completion of my Bachelor’s degree
-              in <strong>Management Information Systems</strong> at San Diego State University, with graduation set for
-              December 2024. I also hold an Associate’s degree in Business Administration from Grossmont College. My academic
-              journey has sparked a deep passion for systems analysis, technology management, and leadership.
+              in <strong>Management Information Systems</strong> at San Diego State University, as a forward-thinking professional with a strong background in Management Information Systems and Business Administration, I bring a strategic and analytical mindset to solving complex business and technological challenges. My expertise encompasses data analytics, systems analysis, and technical management, honed through experiences in high-impact roles, including at Amazon and within cross-functional engineering projects.
             </Paragraph>
             <Paragraph>
-              Throughout my career, I’ve cultivated a diverse skill set through hands-on experience in <strong>systems
-                analysis</strong> and <strong>project management</strong>. I’ve led teams in developing data-driven solutions
-              to optimize operational efficiency, enhancing my ability to manage complex processes and deliver impactful
-              results. My technical acumen is complemented by leadership training, where I have honed essential soft skills
-              like <strong>strategic decision-making</strong> and <strong>team collaboration</strong>.
+              With a commitment to continuous improvement and strategic growth, I specialize in transforming data insights into actionable outcomes, fostering innovation, and leading teams toward success. My work in systems analysis and model-based problem-solving has equipped me with the acumen to navigate and improve dynamic organizational structures effectively.
             </Paragraph>
             <Paragraph>
-              Additionally, my participation in leadership programs, such as <strong>Model United Nations</strong> and
-              professional development webinars, has allowed me to sharpen my public speaking, conflict resolution, and
-              problem-solving abilities in dynamic environments.
-            </Paragraph>
-            <Paragraph>
-              In my free time, I enjoy keeping up with the latest <strong>technology trends</strong>, leadership development
-              seminars, and working on my personal growth. My goal is to combine my technical expertise with leadership to
-              impact the tech industry in a significant way.
+              I am dedicated to leveraging technology and analytics to drive efficiency, optimize operations, and contribute to business intelligence in today’s ever-evolving digital landscape.
             </Paragraph>
           </Grid>
         </Grid>

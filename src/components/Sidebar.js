@@ -212,7 +212,7 @@ function Sidebar({ isOpen, closeSidebar }) {
         </ListItem>
       </List>
 
-      {/* Social Icons Section */}
+
       <Box sx={{ paddingTop: 'auto' }}>
         <Divider sx={{ backgroundColor: '#ffffff', marginBottom: '16px' }} />
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>

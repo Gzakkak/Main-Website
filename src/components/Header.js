@@ -63,7 +63,7 @@ function Header({ toggleSidebar }) {
           gap: { xs: 1, sm: 0 },
         }}
       >
-        {/* Get to Know Me Button */}
+
         <Button
           variant="outlined"
           color="inherit"
@@ -83,7 +83,7 @@ function Header({ toggleSidebar }) {
           Get to know me!
         </Button>
 
-        {/* Name - George Zakkak */}
+
         <Typography
           variant="h6"
           component={ScrollLink}
@@ -94,7 +94,7 @@ function Header({ toggleSidebar }) {
             color: 'inherit',
             cursor: 'pointer',
             fontWeight: 'bold',
-            fontSize: { xs: '1.2rem', sm: '2.2rem' }, // Smaller font size for mobile
+            fontSize: { xs: '1.2rem', sm: '2.2rem' },
             marginY: { xs: 1, sm: 0 },
             '&:hover': {
               color: '#212121',
@@ -104,7 +104,7 @@ function Header({ toggleSidebar }) {
           George Zakkak
         </Typography>
 
-        {/* Connect with Me Button */}
+
         <Button
           variant="outlined"
           color="inherit"

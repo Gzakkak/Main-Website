@@ -35,7 +35,7 @@ const Footer = () => {
 
           <Divider sx={{ backgroundColor: '#4a6a9e', margin: '10px 0' }} />
 
-          {/* Footer Icons */}
+
           <FooterIcons>
             <IconButton
               href="https://www.linkedin.com/in/george-zakkak-01856a219/"
